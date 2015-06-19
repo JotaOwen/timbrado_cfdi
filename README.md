@@ -22,28 +22,28 @@ Ejemplo:
 // Timbrar una factura / nota de crédito / nota de cargo / carta porte
 // Nota: la variable $layout_input se deberá completar de acuerdo a la plantilla definida en el archivo “CFDI Plantilla.txt”.
 
-// Instancia principal
+	//Instancia principal
 	$ws = new TimbradoFacturaDigital();
 	$ws->pathBoveda = “xmls/”;
 
 
-// Timbrar CFDI
+	// Timbrar CFDI
 	$ws->generarCFDI(“my_username”, “my_password”, $layout_input);
 	var_dump ($ws);
 
 
-// Cancelar CFDI directamente en el SAT
+	// Cancelar CFDI directamente en el SAT
 	$ws->cancelarCFDI(“my_username”, “my_password”, “UUID_string”);
 	var_dump ($ws);
 
 
-// Consultar timbres disponibles
+	// Consultar timbres disponibles
 	$ws->consultarCreditos(“my_username”, “my_password”);
 	var_dump ($ws);
 
 
-// Procesar CFDI localmente
-// array $response_ws arreglo retornado en la llamada de $ws->generarCFDI
+	// Procesar CFDI localmente
+	// array $response_ws arreglo retornado en la llamada de $ws->generarCFDI
 	$ws->procesarCFDI( $array_response );
 	var_dump ($ws);
 
